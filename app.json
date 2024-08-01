@@ -1,0 +1,33 @@
+{
+    "expo": {
+      "name": "mkhulu",
+      "slug": "mkhulu",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "icon": "",
+      "splash": {
+        "image": "",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      },
+      "updates": {
+        "fallbackToCacheTimeout": 0
+      },
+      "assetBundlePatterns": [
+        "**/*"
+      ],
+      "ios": {
+        "supportsTablet": true
+      },
+      "android": {
+        "adaptiveIcon": {
+          "foregroundImage": "",
+          "backgroundColor": "#ffffff"
+        }
+      },
+      "web": {
+        "favicon": ""
+      }
+    }
+  }
+  

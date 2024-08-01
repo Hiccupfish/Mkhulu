@@ -1,5 +1,8 @@
 const express = require('express');
 const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config();
+
 const app = express();
 const port = 3000;
 
@@ -11,7 +14,7 @@ app.post('/generate-response', async (req, res) => {
     try {
         const response = await axios.post('https://api.openai.com/v1/completions', {
             model: 'text-davinci-003',
-            prompt: prompt,
+            prompt: `You are an old wise man who speaks in a calm, thoughtful manner. You use proverbs and wisdom from the Zulu culture. Answer the following question: ${prompt}`,
             max_tokens: 150,
             temperature: 0.7
         }, {
