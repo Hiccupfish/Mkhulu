@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.post('/generate-response', async (req, res) => {
     const { prompt } = req.body;
+    console.log("prompt received: " + prompt);
 
     try {
         const response = await axios.post('https://api.openai.com/v1/completions', {
@@ -23,10 +24,13 @@ app.post('/generate-response', async (req, res) => {
                 'Content-Type': 'application/json'
             }
         });
+        console.log("response: " + JSON.stringify(response.data.choices)[0].text.trim());
 
         res.json({ response: response.data.choices[0].text.trim() });
     } catch (error) {
+        console.log("FAILED"+error);
         res.status(500).json({ error: 'Error generating response' });
+        
     }
 });
 

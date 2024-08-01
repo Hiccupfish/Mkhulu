@@ -100,6 +100,7 @@ function HomeScreen() {
                 onChangeText={setPrompt}
             />
             <Button title="Submit" onPress={handleSubmit} />
+            
             <Text style={styles.response}>{response}</Text>
         </View>
     );
