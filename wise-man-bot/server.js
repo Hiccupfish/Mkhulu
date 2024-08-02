@@ -43,7 +43,7 @@ app.post('/generate-response', async (req, res) => {
         const generatedText = response.data[0]?.generated_text; // Use optional chaining to handle undefined
         
         if (generatedText) {
-            console.log("Response: " + generatedText.trim());
+            // console.log("Response: " + generatedText.trim());
             res.json({ response: generatedText.trim() });
         } else {
             throw new Error("Generated text not found in response");

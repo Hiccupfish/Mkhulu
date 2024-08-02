@@ -21,7 +21,6 @@ function HomeScreen() {
             console.error('Error fetching response:', error);
         }
     };
-    
 
     return (
         <View style={styles.container}>
@@ -29,11 +28,11 @@ function HomeScreen() {
             <TextInput
                 style={styles.input}
                 placeholder="Ask a question..."
+                placeholderTextColor="#888"
                 value={prompt}
                 onChangeText={setPrompt}
             />
-            <Button title="Submit" onPress={handleSubmit} />
-            
+            <Button title="Submit" onPress={handleSubmit} color="#1e90ff" />
             <Text style={styles.response}>{response}</Text>
         </View>
     );
@@ -53,23 +52,28 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
+        backgroundColor: '#121212',
         padding: 16,
     },
     header: {
         fontSize: 24,
         fontWeight: 'bold',
+        color: '#ffffff',
         marginBottom: 16,
     },
     input: {
         height: 40,
-        borderColor: 'gray',
+        borderColor: '#444',
         borderWidth: 1,
         marginBottom: 16,
         paddingHorizontal: 8,
+        color: '#ffffff',
+        backgroundColor: '#1e1e1e',
     },
     response: {
         marginTop: 16,
         fontSize: 18,
+        color: '#ffffff',
     },
 });
 
