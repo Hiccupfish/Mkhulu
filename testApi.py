@@ -1,30 +1,18 @@
-import openai
-import os
-import time
+import requests
 
-# Load API key from environment variable
-api_key = 'sk-proj-DzcrQ8PT51s5xMSRwte4T3BlbkFJ8ZwgmYvQNGAcX1j4tQOP'
-openai.api_key = api_key
+# Replace with your actual API key
+API_URL = "https://api-inference.huggingface.co/models/openai-community/gpt2"
+headers = {
+    "Authorization": "Bearer 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"  # Replace with your actual API key
+}
 
-# Define the prompt as a conversation
-messages = [
-    {"role": "system", "content": "You are a wise old man who speaks isiZulu."},
-    {"role": "user", "content": "Can you give me some advice on life?"}
-]
+def query(payload):
+    response = requests.post(API_URL, headers=headers, json=payload)
+    return response.json()
 
-def make_request():
-    try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=messages
-        )
-        return response
-    except openai.error.RateLimitError:
-        print("Rate limit exceeded. Retrying in 10 seconds...")
-        time.sleep(10)  # Wait for 10 seconds before retrying
-        return make_request()  # Retry the request
+# Example payload
+output = query({
+    "inputs": "Tell me about the history and culture of South Africa."
+})
 
-response = make_request()
-
-# Print the response
-print(response.choices[0].message['content'])
+print("Output:", output)
