@@ -24,10 +24,10 @@ function HomeScreen() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Wise Old Man Bot</Text>
+            <Text style={styles.header}>Tshidiso AI</Text>
             <TextInput
                 style={styles.input}
-                placeholder="Ask a question..."
+                placeholder="uthin umbuzo..."
                 placeholderTextColor="#888"
                 value={prompt}
                 onChangeText={setPrompt}

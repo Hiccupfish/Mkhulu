@@ -1,0 +1,9 @@
+Feature: Mkhulu respones
+    As a user
+    I want to ask questions to  mkhulu
+    so that I can get a respone
+
+    Scenario:Ask question about the capital city of south africa
+    Given the server is running 
+    When I ask "What is the capital city of nsouth africa"
+    Then I get the a respone that includes "Pretoria"
